@@ -1,0 +1,679 @@
+:root {
+  --night: #0c1410;
+  --leaf: #1f5c34;
+  --kasavu: #d4b24a;
+  --ink: #1c140c;
+  --paper: #fff6e4;
+  --paper-dark: #f3e2c4;
+  --muted-ink: #4a3c2a;
+  --cream: #f7edd8;
+  --danger: #8b2e2e;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  color: var(--cream);
+  font-family: "Source Sans 3", "Segoe UI", sans-serif;
+  background: var(--night);
+}
+
+.sky {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background: linear-gradient(180deg, #081018 0%, #122018 45%, #1a2416 100%);
+}
+
+.sky-stars {
+  position: absolute;
+  inset: 0;
+  opacity: 0.55;
+  background-image:
+    radial-gradient(1.5px 1.5px at 12% 18%, #fff 50%, transparent 51%),
+    radial-gradient(1px 1px at 28% 62%, #ffe9a8 50%, transparent 51%),
+    radial-gradient(1.5px 1.5px at 70% 14%, #fff 50%, transparent 51%),
+    radial-gradient(1px 1px at 82% 48%, #fff 50%, transparent 51%),
+    radial-gradient(1px 1px at 48% 78%, #fff 50%, transparent 51%);
+}
+
+.doodles {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+  overflow: visible;
+}
+
+.doodle {
+  fill: none;
+  stroke: #e8d6a0;
+  stroke-width: 2.1;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  opacity: 0.72;
+}
+
+.d-star {
+  fill: #e8d6a0;
+  stroke: none;
+}
+
+.d-moon.r {
+  transform: translate(92vw, 22vh);
+}
+
+.d-star.s3 {
+  transform: translate(88vw, 8vh) rotate(12deg);
+}
+
+.d-star.s4 {
+  transform: translate(76vw, 70vh) rotate(-8deg);
+}
+
+.d-rocket.r2 {
+  transform: translate(86vw, 58vh) rotate(-22deg);
+}
+
+.d-palm.r2 {
+  transform: translate(90vw, 72vh);
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 22px;
+  border-bottom: 4px solid var(--kasavu);
+  background: #14301c;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.brand {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  background: none;
+  border: 0;
+  color: inherit;
+  cursor: pointer;
+  text-align: left;
+}
+
+.brand-mark {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--kasavu);
+}
+
+.brand-ml {
+  display: block;
+  font-family: "Noto Serif Malayalam", serif;
+  font-size: 1.05rem;
+}
+
+.brand-en {
+  display: block;
+  font-family: "Patrick Hand", cursive;
+  font-size: 0.95rem;
+  color: var(--kasavu);
+}
+
+.nav {
+  display: flex;
+  gap: 8px;
+}
+
+.nav button {
+  background: transparent;
+  color: var(--cream);
+  border: 1px solid #e7c35a88;
+  border-radius: 4px 12px 4px 10px;
+  padding: 8px 14px;
+  cursor: pointer;
+  font-weight: 600;
+  font-family: inherit;
+}
+
+.nav button:hover,
+.btn.ghost:hover {
+  background: #e7c35a22;
+}
+
+.badge {
+  background: var(--kasavu);
+  color: #2a1a08;
+  border-radius: 999px;
+  padding: 1px 7px;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+main {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 28px 20px 80px;
+}
+
+.screen[hidden] {
+  display: none !important;
+}
+
+.screen.active {
+  display: block !important;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 28px;
+  align-items: center;
+}
+
+.kicker {
+  font-family: "Patrick Hand", cursive;
+  color: var(--kasavu);
+  font-size: 1.15rem;
+  margin: 0 0 6px;
+}
+
+h1,
+h2,
+h3 {
+  font-family: Georgia, "Noto Serif Malayalam", serif;
+  margin: 0 0 12px;
+  font-weight: 700;
+}
+
+h1 {
+  font-size: clamp(2.1rem, 4.4vw, 3.6rem);
+  line-height: 1.05;
+}
+
+h1 em {
+  display: block;
+  color: var(--kasavu);
+  font-style: italic;
+  font-family: "Patrick Hand", cursive;
+  font-size: 0.92em;
+  font-weight: 400;
+}
+
+.lede {
+  font-size: 1.08rem;
+  color: #d9d0bc;
+  max-width: 40ch;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 22px 0 10px;
+}
+
+.fineprint {
+  color: #b7c4ae;
+  font-size: 0.9rem;
+}
+
+.hero-art,
+.track-art {
+  margin: 0;
+  border: 6px solid #2a2116;
+  outline: 2px dashed var(--kasavu);
+  border-radius: 6px 18px 8px 14px;
+  overflow: hidden;
+  background: #111;
+}
+
+.hero-art img,
+.track-art img,
+.menu-card img {
+  width: 100%;
+  display: block;
+}
+
+.hero-art figcaption,
+.track-art figcaption {
+  background: #fff1d4;
+  color: var(--ink);
+  padding: 10px 14px;
+  font-size: 0.95rem;
+  font-family: "Patrick Hand", cursive;
+}
+
+.btn {
+  border: 0;
+  cursor: pointer;
+  border-radius: 6px 14px 6px 12px;
+  padding: 12px 18px;
+  font-weight: 700;
+  font-family: inherit;
+}
+
+.btn.gold {
+  background: var(--kasavu);
+  color: #2a1606;
+  box-shadow: 2px 3px 0 #7a5310;
+}
+
+.btn.gold:active {
+  transform: translate(1px, 1px);
+}
+
+.btn.ghost {
+  background: transparent;
+  color: var(--cream);
+  border: 1px solid var(--kasavu);
+}
+
+.btn.danger {
+  background: #5c1c1c;
+  color: #ffd4d4;
+  border: 1px solid #e08080;
+}
+
+.btn.wide {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 28px 0;
+}
+
+.strip span {
+  background: var(--paper);
+  color: var(--ink);
+  padding: 6px 12px;
+  font-family: "Patrick Hand", cursive;
+  font-size: 1.05rem;
+  border: 1px solid #c9a24a;
+  transform: rotate(-1deg);
+}
+
+.strip span:nth-child(even) {
+  transform: rotate(1.4deg);
+}
+
+.reviews,
+.menu-grid,
+.achievements,
+.pay-grid {
+  display: grid;
+  gap: 16px;
+}
+
+.reviews {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.review,
+.menu-card,
+.bill,
+.achievement,
+.cart-row {
+  background: #173322;
+  border: 1px solid #e7c35a44;
+  border-radius: 8px 16px 10px 14px;
+  padding: 16px;
+}
+
+.review.tilt {
+  transform: rotate(-1.2deg);
+}
+
+.star-rating {
+  color: var(--kasavu);
+  margin: 0;
+}
+
+.review cite {
+  color: #c9b896;
+  font-style: normal;
+  font-size: 0.85rem;
+}
+
+.sub {
+  color: #c9d4c4;
+  margin-top: -6px;
+}
+
+.achievements {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.achievement.locked {
+  opacity: 0.45;
+}
+
+.screen-head {
+  margin-bottom: 18px;
+}
+
+.filters {
+  border: 1px dashed var(--kasavu);
+  border-radius: 12px;
+  padding: 14px;
+  margin-bottom: 18px;
+}
+
+.filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.filter-row button {
+  background: #0f2418;
+  color: var(--cream);
+  border: 1px solid #e7c35a55;
+  border-radius: 999px;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.filter-row button.active {
+  background: var(--kasavu);
+  color: #2a1606;
+  font-weight: 700;
+}
+
+.chettan-pick {
+  background: #3a2410;
+  border-left: 4px solid var(--kasavu);
+  padding: 12px 14px;
+  border-radius: 8px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.menu-grid {
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+}
+
+.menu-card img {
+  height: 210px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  background: #eee;
+}
+
+.menu-card h3 {
+  font-size: 1.15rem;
+}
+
+.price {
+  color: var(--kasavu);
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.menu-card p {
+  color: #d5cbb6;
+  min-height: 2.6em;
+}
+
+.menu-card.mystery {
+  outline: 2px dashed var(--kasavu);
+}
+
+.cart-layout {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 18px;
+}
+
+.cart-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.cart-row img {
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.cart-row-copy {
+  flex: 1;
+}
+
+.bill {
+  background: var(--paper);
+  color: var(--ink);
+  border: 2px solid #3a2a10;
+}
+
+.bill h3,
+.bill-total {
+  color: var(--ink);
+}
+
+.bill-line {
+  display: flex;
+  justify-content: space-between;
+  margin: 8px 0;
+  color: var(--muted-ink);
+  font-size: 1.02rem;
+}
+
+.bill-total {
+  font-size: 1.4rem;
+  border-top: 1px solid #c9a24a;
+  padding-top: 10px;
+}
+
+.bill-scold {
+  font-style: italic;
+  color: #6b3418;
+}
+
+.bill .btn.ghost {
+  color: var(--ink);
+  border-color: #3a2a10;
+}
+
+.pay-grid {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.pay-card {
+  cursor: pointer;
+  text-align: center;
+  background: var(--paper);
+  color: var(--ink);
+  border: 2px solid #3a2a10;
+  border-radius: 12px;
+  padding: 16px 14px 18px;
+  font-family: inherit;
+}
+
+.pay-card img {
+  width: 132px;
+  height: 132px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 0 auto 10px;
+  display: block;
+  background: #ddd;
+}
+
+.pay-card strong {
+  display: block;
+  font-size: 1.28rem;
+  color: #14110c;
+  letter-spacing: 0.01em;
+}
+
+.pay-card p {
+  margin: 8px 0 0;
+  color: #3a2f22;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.pay-card.selected {
+  outline: 3px solid #1f6b3a;
+  background: #fff;
+}
+
+.pay-due {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #fff6e4;
+  background: #1a2e20;
+  border: 2px solid var(--kasavu);
+  display: inline-block;
+  padding: 10px 16px;
+  margin: 18px 0 8px;
+}
+
+.pay-result {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #14220c;
+  background: #e7f3c8;
+  border: 2px solid #2f6b3a;
+  padding: 14px 16px;
+  margin-top: 12px;
+}
+
+.track-art {
+  margin: 0 0 18px;
+}
+
+.track-steps {
+  list-style: none;
+  padding: 0;
+}
+
+.track-steps li {
+  padding: 12px 14px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  background: #122018;
+  border: 1px solid #2f5a3c;
+  opacity: 0.35;
+}
+
+.track-steps li.done {
+  opacity: 1;
+  border-color: var(--kasavu);
+}
+
+.nothing {
+  height: 220px;
+  border-radius: 12px;
+  background: #000;
+  display: grid;
+  place-items: center;
+  color: #555;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  margin: 12px 0 20px;
+}
+
+.nag {
+  display: flex;
+  gap: 10px;
+}
+
+.nag-text {
+  min-height: 1.4em;
+  color: var(--kasavu);
+  font-family: "Patrick Hand", cursive;
+  font-size: 1.2rem;
+}
+
+.toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--paper);
+  color: var(--ink);
+  padding: 12px 18px;
+  border-radius: 8px;
+  font-weight: 700;
+  z-index: 20;
+  border: 2px solid #3a2a10;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background: #0008;
+  display: grid;
+  place-items: center;
+  z-index: 30;
+}
+
+.modal-card {
+  width: min(420px, 90vw);
+  background: var(--paper);
+  color: var(--ink);
+  border: 3px solid #3a2a10;
+  border-radius: 12px;
+  padding: 22px;
+}
+
+#modal-text {
+  white-space: pre-wrap;
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+.foot {
+  text-align: center;
+  padding: 18px;
+  color: #8aa58a;
+  border-top: 1px solid #e7c35a33;
+  font-family: "Patrick Hand", cursive;
+  font-size: 1.1rem;
+}
+
+@media (max-width: 860px) {
+  .hero,
+  .reviews,
+  .cart-layout,
+  .achievements {
+    grid-template-columns: 1fr;
+  }
+
+  .topbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .d-palm,
+  .d-palm.r2 {
+    display: none;
+  }
+}

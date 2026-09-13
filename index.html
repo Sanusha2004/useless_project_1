@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chandran Chettante Chayakada</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif+Malayalam:wght@600;700&family=Patrick+Hand&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="sky" aria-hidden="true">
+      <div class="sky-stars"></div>
+    </div>
+
+    <svg class="doodles" aria-hidden="true">
+      <g class="doodle d-moon" transform="translate(24,90) rotate(-12)">
+        <path d="M28 8c-8 6-12 18-6 28 8 12 24 12 32 4-10 8-26 6-34-6C12 22 16 10 28 8z" />
+        <circle cx="22" cy="22" r="2.2" />
+        <circle cx="30" cy="30" r="1.4" />
+      </g>
+      <g class="doodle d-star" transform="translate(70,28) rotate(18)">
+        <path d="M12 0l3 8 8 3-8 3-3 8-3-8-8-3 8-3z" />
+      </g>
+      <g class="doodle d-star s2" transform="translate(210,48) rotate(-20)">
+        <path d="M8 0l2 5 5 2-5 2-2 5-2-5-5-2 5-2z" />
+      </g>
+      <g class="doodle d-rocket" transform="translate(118,16) rotate(28)">
+        <path d="M10 28 L16 4 L22 28 Z" />
+        <path d="M10 22 q-8 6-6 14" />
+        <path d="M22 22 q8 6 6 14" />
+        <circle cx="16" cy="16" r="2.4" />
+      </g>
+      <g class="doodle d-palm" transform="translate(40,520)">
+        <path d="M28 110 V42" />
+        <path d="M28 46 C8 36 2 18 10 10" />
+        <path d="M28 46 C16 26 12 6 22 4" />
+        <path d="M28 46 C40 26 44 6 34 4" />
+        <path d="M28 46 C48 36 54 18 46 10" />
+        <path d="M18 86 q6 4 4 10" />
+      </g>
+      <g class="doodle d-moon r" transform="translate(0,0)">
+        <path d="M18 10c-6 5-8 14-4 22 6 10 18 10 24 3-8 7-20 5-26-5C6 20 8 12 18 10z" />
+      </g>
+      <g class="doodle d-star s3">
+        <path d="M10 0l2.5 6.5 6.5 2.5-6.5 2.5L10 18l-2.5-6.5L1 9l6.5-2.5z" />
+      </g>
+      <g class="doodle d-rocket r2" transform="rotate(-18)">
+        <path d="M8 22 L12 4 L16 22 Z" />
+        <path d="M8 18 q-6 5-4 11" />
+        <path d="M16 18 q6 5 4 11" />
+      </g>
+      <g class="doodle d-palm r2">
+        <path d="M22 90 V36" />
+        <path d="M22 40 C6 32 2 16 8 10" />
+        <path d="M22 40 C14 22 12 6 18 4" />
+        <path d="M22 40 C30 22 32 6 26 4" />
+        <path d="M22 40 C38 32 42 16 36 10" />
+      </g>
+      <g class="doodle d-star s4">
+        <path d="M7 0l1.8 4.6 4.6 1.8-4.6 1.8L7 13l-1.8-4.8L.6 6.4l4.6-1.8z" />
+      </g>
+    </svg>
+
+    <header class="topbar">
+      <button class="brand" data-go="home" type="button">
+        <img class="brand-mark" src="assets/moon-chayakada.jpg" alt="" />
+        <span>
+          <span class="brand-ml">ചന്ദ്രൻ ചേട്ടന്റെ ചായക്കട</span>
+          <span class="brand-en">Tea. Moon. Cow.</span>
+        </span>
+      </button>
+      <nav class="nav">
+        <button type="button" data-go="home">Home</button>
+        <button type="button" data-go="menu">Board</button>
+        <button type="button" data-go="cart" class="cart-btn">
+          Parcel <span id="cart-count" class="badge">0</span>
+        </button>
+      </nav>
+    </header>
+
+    <main>
+      <section id="screen-home" class="screen active">
+        <div class="hero">
+          <div class="hero-copy">
+            <p class="kicker">Open. Cow permitting.</p>
+            <h1>Chandran Chettante <em>Chayakada</em></h1>
+            <p class="lede">
+              Bonda, pazham pori, tea. Same kettle as always. The shop just
+              happens to be on the moon now.
+            </p>
+            <div class="hero-actions">
+              <button class="btn gold" type="button" data-go="menu">See today’s board</button>
+              <button class="btn ghost" type="button" id="call-chettan">Call Chettan</button>
+            </div>
+            <p class="fineprint">If the cow is sitting, wait. That’s the rule.</p>
+          </div>
+          <figure class="hero-art">
+            <img src="assets/moon-chayakada.jpg" alt="Chandran Chettan pouring tea on the moon for two astronauts" />
+            <figcaption>Sea of Tranquility. Kettle’s on.</figcaption>
+          </figure>
+        </div>
+
+        <div class="strip kasavu">
+          <span>Kasavu certified</span>
+          <span>Moonlight extra</span>
+          <span>Cow delays standard</span>
+          <span>No refunds, only tea</span>
+        </div>
+
+        <section class="reviews-block">
+          <h2>What people said</h2>
+          <p class="sub">Chettan wrote these down. In pen.</p>
+          <div class="reviews">
+            <article class="review">
+              <p class="star-rating">★★★★★</p>
+              <p>Ordered Stardust Pazham Pori. Got normal pazham pori. Still ate it.</p>
+              <cite>— Moganlal</cite>
+            </article>
+            <article class="review tilt">
+              <p class="star-rating">★★★★</p>
+              <p>Moonstone Bonda was good. Don’t ask me what it was.</p>
+              <cite>— An astronaut, probably</cite>
+            </article>
+            <article class="review">
+              <p class="star-rating">★</p>
+              <p>Asked at 2. Parcel showed up yesterday. Fine.</p>
+              <cite>— Neighbour</cite>
+            </article>
+          </div>
+        </section>
+
+        <section class="achievements-block">
+          <h2>Board of honour</h2>
+          <div id="achievements" class="achievements"></div>
+        </section>
+      </section>
+
+      <section id="screen-menu" class="screen" hidden>
+        <div class="screen-head">
+          <h2>Today’s board</h2>
+          <p>Whatever Chettan packed this morning.</p>
+        </div>
+        <fieldset class="filters">
+          <legend>What do you want?</legend>
+          <div class="filter-row" id="filters"></div>
+        </fieldset>
+        <p id="chettan-pick" class="chettan-pick hidden"></p>
+        <div id="menu-grid" class="menu-grid"></div>
+      </section>
+
+      <section id="screen-cart" class="screen" hidden>
+        <div class="screen-head">
+          <h2>Your bill</h2>
+          <p>Moonlight is extra. Don’t argue.</p>
+        </div>
+        <div class="cart-layout">
+          <div id="cart-items" class="cart-items"></div>
+          <aside class="bill">
+            <h3>No. 12</h3>
+            <div id="bill-lines"></div>
+            <p class="bill-total">Total: ₹<span id="bill-total">0</span></p>
+            <p id="bill-scold" class="bill-scold hidden">You already paid. Why are you looking?</p>
+            <button class="btn gold wide" type="button" id="to-payment">Pay</button>
+            <button class="btn ghost wide" type="button" data-go="menu">Back to the board</button>
+          </aside>
+        </div>
+      </section>
+
+      <section id="screen-payment" class="screen" hidden>
+        <div class="screen-head">
+          <h2>Pay Chettan</h2>
+          <p>Pick one. He will remember either way.</p>
+        </div>
+        <div class="pay-grid" id="pay-methods"></div>
+        <p class="pay-due">Amount due: ₹<span id="pay-amount">0</span></p>
+        <button class="btn gold wide" type="button" id="pay-now">Confirm payment</button>
+        <p id="pay-result" class="pay-result hidden"></p>
+      </section>
+
+      <section id="screen-track" class="screen" hidden>
+        <div class="screen-head">
+          <h2>Where is Chettan</h2>
+          <p>Map is a suggestion.</p>
+        </div>
+        <figure class="track-art">
+          <img src="assets/chettan-delivery.jpg" alt="Chandran Chettan flying a scooter from the Moon to Earth" />
+          <figcaption id="track-caption">On the way from Moon to Earth.</figcaption>
+        </figure>
+        <ol id="track-steps" class="track-steps"></ol>
+        <div id="delivery-reveal" class="delivery-reveal hidden">
+          <h3>It’s here</h3>
+          <p>Actual contents:</p>
+          <div class="nothing">
+            <span>a picture of absolutely nothing</span>
+          </div>
+          <p class="thanks">Thank you for ordering from Chandran Chettante Chayakada.</p>
+          <p>Order again?</p>
+          <div class="nag">
+            <button class="btn gold" type="button" id="order-yes">Yes</button>
+            <button class="btn danger" type="button" id="order-no">No</button>
+          </div>
+          <p id="nag-text" class="nag-text"></p>
+        </div>
+      </section>
+    </main>
+
+    <div id="toast" class="toast hidden" role="status"></div>
+    <div id="modal" class="modal hidden">
+      <div class="modal-card">
+        <p id="modal-text"></p>
+        <button class="btn gold" type="button" id="modal-close">Okay</button>
+      </div>
+    </div>
+
+    <footer class="foot">
+      <p>© 1969–now · Chandran Chettante Chayakada · No refunds · Only tea</p>
+    </footer>
+    <script src="app.js"></script>
+  </body>
+</html>
