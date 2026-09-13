@@ -677,3 +677,211 @@ h1 em {
     display: none;
   }
 }
+/* ==========================================
+   SCATTERED DOODLES
+   Moon + Stars + Coconuts
+========================================== */
+
+/* Keep doodles behind the website */
+.doodles {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Keep website above doodles */
+.topbar,
+main,
+.foot {
+    position: relative;
+    z-index: 2;
+}
+
+
+/* ==========================================
+   🌙 MOONS
+========================================== */
+
+.d-moon {
+    fill: #f6d77a;
+    stroke: #f6d77a;
+    stroke-width: 2;
+}
+
+/* Moon - top left */
+.d-moon:not(.r) {
+    transform: translate(35px, 90px) rotate(-12deg) scale(1.1);
+}
+
+/* Moon - bottom right */
+.d-moon.r {
+    transform: translate(88vw, 72vh) rotate(15deg) scale(0.9);
+}
+
+
+/* ==========================================
+   ⭐ STARS
+========================================== */
+
+.d-star {
+    fill: #f6d77a;
+    stroke: #f6d77a;
+    stroke-width: 2;
+}
+
+
+/* Star 1 - top area */
+.d-star:not(.s2):not(.s3):not(.s4) {
+    transform: translate(18vw, 7vh) rotate(15deg) scale(1);
+}
+
+
+/* Star 2 - upper right */
+.d-star.s2 {
+    transform: translate(78vw, 13vh) rotate(-20deg) scale(1.2);
+}
+
+
+/* Star 3 - middle left */
+.d-star.s3 {
+    transform: translate(8vw, 45vh) rotate(10deg) scale(0.9);
+}
+
+
+/* Star 4 - bottom right */
+.d-star.s4 {
+    transform: translate(82vw, 82vh) rotate(-15deg) scale(0.8);
+}
+
+
+/* ==========================================
+   ⭐ EXTRA STAR EFFECTS
+========================================== */
+
+.sky-stars {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+}
+
+
+/* Small scattered stars */
+.sky-stars::before {
+    content: "✦";
+    position: absolute;
+
+    color: #f6d77a;
+    font-size: 22px;
+
+    top: 18%;
+    left: 38%;
+
+    text-shadow:
+        320px 40px 0 #f6d77a,
+        -250px 170px 0 #f6d77a,
+        480px 280px 0 #f6d77a,
+        -100px 430px 0 #f6d77a,
+        600px 500px 0 #f6d77a,
+        100px 600px 0 #f6d77a;
+}
+
+
+/* ==========================================
+   🥥 COCONUT DOODLES
+========================================== */
+
+/* Coconut 1 */
+.sky::after {
+    content: "🥥";
+
+    position: fixed;
+
+    top: 16%;
+    right: 8%;
+
+    font-size: 42px;
+
+    transform: rotate(-15deg);
+
+    filter: grayscale(20%);
+}
+
+
+/* Coconut 2 */
+.sky::before {
+    content: "🥥";
+
+    position: fixed;
+
+    bottom: 18%;
+    left: 7%;
+
+    font-size: 38px;
+
+    transform: rotate(15deg);
+
+    filter: grayscale(20%);
+}
+
+
+/* ==========================================
+   🥥 MORE COCONUTS
+========================================== */
+
+/* Use existing palm doodle area to create extra decorations */
+.d-palm {
+    stroke: #8fae4b;
+    stroke-width: 2.5;
+    fill: none;
+}
+
+
+/* ==========================================
+   ✨ FLOATING EFFECT
+========================================== */
+
+.d-moon,
+.d-star,
+.sky-stars::before,
+.sky::before,
+.sky::after {
+    animation: doodleFloat 6s ease-in-out infinite;
+}
+
+
+.d-star.s2 {
+    animation-delay: 1s;
+}
+
+.d-star.s3 {
+    animation-delay: 2s;
+}
+
+.d-star.s4 {
+    animation-delay: 3s;
+}
+
+.d-moon.r {
+    animation-delay: 1.5s;
+}
+
+
+@keyframes doodleFloat {
+
+    0% {
+        margin-top: 0;
+    }
+
+    50% {
+        margin-top: -8px;
+    }
+
+    100% {
+        margin-top: 0;
+    }
+
+}

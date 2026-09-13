@@ -1,10 +1,10 @@
-<<<<<<< HEAD
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Chandran Chettante Chayakada</title>
+    <title>ചന്ദ്രൻ ചേട്ടന്റെ ചായക്കട</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -77,7 +77,7 @@
       </button>
       <nav class="nav">
         <button type="button" data-go="home">Home</button>
-        <button type="button" data-go="menu">Board</button>
+        <button type="button" data-go="menu">MENU</button>
         <button type="button" data-go="cart" class="cart-btn">
           Parcel <span id="cart-count" class="badge">0</span>
         </button>
@@ -88,14 +88,14 @@
       <section id="screen-home" class="screen active">
         <div class="hero">
           <div class="hero-copy">
-            <p class="kicker">Open. Cow permitting.</p>
-            <h1>Chandran Chettante <em>Chayakada</em></h1>
+            
+            <h1>ചന്ദ്രൻ ചേട്ടന്റെ  <em>ചായക്കട</em></h1>
             <p class="lede">
               Bonda, pazham pori, tea. Same kettle as always. The shop just
               happens to be on the moon now.
             </p>
             <div class="hero-actions">
-              <button class="btn gold" type="button" data-go="menu">See today’s board</button>
+              <button class="btn gold" type="button" data-go="menu">See today’s Menu</button>
               <button class="btn ghost" type="button" id="call-chettan">Call Chettan</button>
             </div>
             <p class="fineprint">If the cow is sitting, wait. That’s the rule.</p>
@@ -143,7 +143,7 @@
 
       <section id="screen-menu" class="screen" hidden>
         <div class="screen-head">
-          <h2>Today’s board</h2>
+          <h2>Today’s Menu</h2>
           <p>Whatever Chettan packed this morning.</p>
         </div>
         <fieldset class="filters">
@@ -167,7 +167,7 @@
             <p class="bill-total">Total: ₹<span id="bill-total">0</span></p>
             <p id="bill-scold" class="bill-scold hidden">You already paid. Why are you looking?</p>
             <button class="btn gold wide" type="button" id="to-payment">Pay</button>
-            <button class="btn ghost wide" type="button" data-go="menu">Back to the board</button>
+            <button class="btn ghost wide" type="button" data-go="menu">Back to the Menu</button>
           </aside>
         </div>
       </section>
@@ -175,11 +175,30 @@
       <section id="screen-payment" class="screen" hidden>
         <div class="screen-head">
           <h2>Pay Chettan</h2>
-          <p>Pick one. He will remember either way.</p>
+          <p>Scan the code. He checks his phone slowly, so be patient.</p>
         </div>
-        <div class="pay-grid" id="pay-methods"></div>
-        <p class="pay-due">Amount due: ₹<span id="pay-amount">0</span></p>
-        <button class="btn gold wide" type="button" id="pay-now">Confirm payment</button>
+        
+        <!-- UPI Scanner Block -->
+        <div class="upi-scanner-block" style="text-align: center; margin: 2rem 0;">
+          <p style="font-weight: 600; margin-bottom: 1rem;">Scan to Pay via UPI</p>
+          
+          <!-- UPLOAD YOUR QR CODE HERE: Change 'assets/your-upi-qr.png' to your actual image file -->
+          <img 
+  src="assets/your-upi-qr.png" 
+  alt="Chandran Chettan UPI QR Code" 
+  style="width: 250px; height: 250px; object-fit: contain; border: 2px dashed #ccc; border-radius: 12px; padding: 10px;"
+/>
+          
+        </div>
+
+        <p class="pay-due" style="text-align: center; font-size: 1.25rem;">Amount due: ₹<span id="pay-amount">0</span></p>
+        
+        <!-- Existing payment grid can be kept or removed if you ONLY want UPI -->
+        <div class="pay-grid" id="pay-methods" hidden></div> 
+
+        <button class="btn gold wide" type="button" id="pay-now">Confirm Payment</button>
+
+        </button>
         <p id="pay-result" class="pay-result hidden"></p>
       </section>
 
@@ -224,6 +243,4 @@
     <script src="app.js"></script>
   </body>
 </html>
-=======
 
->>>>>>> 69311fd79051eb09e3b7ab1c8ad147682aabe197
